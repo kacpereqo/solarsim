@@ -12,23 +12,11 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
 
+# add SDL2 paths to C:
 
-# SETUP SDL2
-
-# find_package(SDL2 REQUIRED)   # <<< probably best practice.
-                                # But lets do it manually for now.
-                                #   The downside is that if the development environment
-                                #   differ from others (which they tend to do).
-                                #   Therefore each developer must change the SDL2 paths to their SDL2 folder.
-                                #   ...and libs is probably not compatible with all compilers.
-
-# NOTE: Folders here contain both SDL2 and SDL2_image files.
 set(SDL2_LIB_DIR C:/SDL/lib)
 set(SDL2_INCLUDE_DIR C:/SDL/include)
 set(SDL2_LIBRARY C:/SDL/bin)
-
-# SETUP INCLUDE AND LINK DIRS:
-
 
 include_directories(
     ${SDL2_INCLUDE_DIR}
@@ -38,9 +26,6 @@ include_directories(
 link_directories(
     ${SDL2_LIB_DIR}
 )
-
-
-# INCLUDE FILES THAT SHOULD BE COMPILED:
 
 file(GLOB_RECURSE SRC "src/*.cpp" "src/*.h")
 
@@ -52,10 +37,9 @@ message(STATUS "")
 
 add_executable(${PROJECT_NAME} ${SRC}
         src/Game.cpp
-        src/Game.hpp)
-
-
-# LINK PROGRAM
+        src/Game.hpp
+        src/window.cpp
+        src/window.hpp)
 
 target_link_libraries(
     ${PROJECT_NAME}
@@ -64,9 +48,6 @@ target_link_libraries(
         SDL2
         SDL2_image
 )
-
-
-# COPY OVER STATIC FILES
 
 message(STATUS "Copying all assets to destination folder...")
 file(

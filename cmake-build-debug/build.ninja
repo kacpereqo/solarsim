@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/remza/CLionProjects/solarsim/cmake-build-debug/
 
 build cmake_object_order_depends_target_solarism: phony || .
 
-build CMakeFiles/solarism.dir/src/Game.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/Game.cpp || cmake_object_order_depends_target_solarism
-  DEP_FILE = CMakeFiles\solarism.dir\src\Game.cpp.obj.d
+build CMakeFiles/solarism.dir/src/game.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/game.cpp || cmake_object_order_depends_target_solarism
+  DEP_FILE = CMakeFiles\solarism.dir\src\game.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/SDL/include -IC:/Users/remza/CLionProjects/solarsim/include
   OBJECT_DIR = CMakeFiles\solarism.dir
@@ -58,6 +58,13 @@ build CMakeFiles/solarism.dir/src/Game.cpp.obj: CXX_COMPILER__solarism_unscanned
 
 build CMakeFiles/solarism.dir/src/main.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/main.cpp || cmake_object_order_depends_target_solarism
   DEP_FILE = CMakeFiles\solarism.dir\src\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/SDL/include -IC:/Users/remza/CLionProjects/solarsim/include
+  OBJECT_DIR = CMakeFiles\solarism.dir
+  OBJECT_FILE_DIR = CMakeFiles\solarism.dir\src
+
+build CMakeFiles/solarism.dir/src/window.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/window.cpp || cmake_object_order_depends_target_solarism
+  DEP_FILE = CMakeFiles\solarism.dir\src\window.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/SDL/include -IC:/Users/remza/CLionProjects/solarsim/include
   OBJECT_DIR = CMakeFiles\solarism.dir
@@ -71,7 +78,7 @@ build CMakeFiles/solarism.dir/src/main.cpp.obj: CXX_COMPILER__solarism_unscanned
 #############################################
 # Link the executable C:\Users\remza\CLionProjects\solarsim\bin\Debug\solarism.exe
 
-build C$:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe: CXX_EXECUTABLE_LINKER__solarism_Debug CMakeFiles/solarism.dir/src/Game.cpp.obj CMakeFiles/solarism.dir/src/main.cpp.obj
+build C$:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe: CXX_EXECUTABLE_LINKER__solarism_Debug CMakeFiles/solarism.dir/src/game.cpp.obj CMakeFiles/solarism.dir/src/main.cpp.obj CMakeFiles/solarism.dir/src/window.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/SDL/lib

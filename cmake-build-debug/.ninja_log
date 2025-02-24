@@ -1,9 +1,23 @@
 # ninja log v6
-2	239	7620995462440297	build.ninja	f70fb02cadc277c4
-1129	1323	7620959421804292	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	c38ce406b1247524
+2	239	7621003487346316	build.ninja	f70fb02cadc277c4
+922	1018	7621003271129747	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	18ce40b224ad30ff
 2	47	7620931846751690	CMakeFiles/solarsim.dir/main.cpp.obj	1a87c0cdd18d7e18
 6	1056	7620937120521694	CMakeFiles/imp.dir/src/GameBase.cpp.obj	1baeb4aac06752e
 6	901	7620944731975078	CMakeFiles/imp.dir/src/main.cpp.obj	4ae7c155f630aa23
 2	4621	7620933280681672	CMakeFiles/imp.dir/src/Game.cpp.obj	b7f893491357eaeb
 902	988	7620944740928964	C:/Users/remza/CLionProjects/solarsim/bin/Debug/imp.exe	bec4fa8afd36be5e
-2	1126	7620959410525857	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
+10	626	7621003262015473	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
+6	922	7621003261975473	CMakeFiles/solarism.dir/src/game.cpp.obj	7fdc793a69986a97
+9	638	7621005394385528	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
+6	941	7621005394345565	CMakeFiles/solarism.dir/src/game.cpp.obj	7fdc793a69986a97
+12	980	7621005394405568	CMakeFiles/solarism.dir/src/window.cpp.obj	c886661700a2d421
+980	1072	7621005404095563	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	4319f646c1b4ffba
+13	917	7621033115829337	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
+8	1141	7621033115779326	CMakeFiles/solarism.dir/src/game.cpp.obj	7fdc793a69986a97
+16	1167	7621033115859327	CMakeFiles/solarism.dir/src/window.cpp.obj	c886661700a2d421
+1167	1355	7621033127369439	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	4319f646c1b4ffba
+68	952	7621033251658364	CMakeFiles/solarism.dir/src/game.cpp.obj	7fdc793a69986a97
+953	1042	7621033260508377	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	4319f646c1b4ffba
+10	681	7621033835342965	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
+6	1037	7621033835312971	CMakeFiles/solarism.dir/src/game.cpp.obj	7fdc793a69986a97
+1038	1134	7621033845622988	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	4319f646c1b4ffba
