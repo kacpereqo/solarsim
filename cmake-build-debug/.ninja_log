@@ -1,0 +1,9 @@
+# ninja log v6
+2	239	7620995462440297	build.ninja	f70fb02cadc277c4
+1129	1323	7620959421804292	C:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe	c38ce406b1247524
+2	47	7620931846751690	CMakeFiles/solarsim.dir/main.cpp.obj	1a87c0cdd18d7e18
+6	1056	7620937120521694	CMakeFiles/imp.dir/src/GameBase.cpp.obj	1baeb4aac06752e
+6	901	7620944731975078	CMakeFiles/imp.dir/src/main.cpp.obj	4ae7c155f630aa23
+2	4621	7620933280681672	CMakeFiles/imp.dir/src/Game.cpp.obj	b7f893491357eaeb
+902	988	7620944740928964	C:/Users/remza/CLionProjects/solarsim/bin/Debug/imp.exe	bec4fa8afd36be5e
+2	1126	7620959410525857	CMakeFiles/solarism.dir/src/main.cpp.obj	805243185dc9fe93
