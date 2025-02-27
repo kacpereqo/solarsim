@@ -5,6 +5,7 @@
 #ifndef WINDOW_HPP
 #define WINDOW_HPP
 
+#include <iostream>
 #include <SDL2/SDL.h>
 #include <expected>
 
@@ -12,14 +13,17 @@ namespace Window {
 
 class Window {
 private:
-    SDL_Surface* winSurface = nullptr;
     SDL_Window* window = nullptr;
+
 public:
     static constexpr int HEIGHT = 720;
     static constexpr int WIDTH = 1280;
     static constexpr char TITLE[] = "Example";
 
     void init();
+
+    SDL_Window* get_window() const;
+
     ~Window();
 };
 

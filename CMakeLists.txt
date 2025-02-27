@@ -39,7 +39,13 @@ add_executable(${PROJECT_NAME} ${SRC}
         src/Game.cpp
         src/Game.hpp
         src/window.cpp
-        src/window.hpp)
+        src/window.hpp
+        src/Planet.cpp
+        src/Planet.hpp
+        src/Renderer.cpp
+        src/Renderer.hpp
+        src/units.hpp
+)
 
 target_link_libraries(
     ${PROJECT_NAME}

@@ -63,6 +63,20 @@ build CMakeFiles/solarism.dir/src/main.cpp.obj: CXX_COMPILER__solarism_unscanned
   OBJECT_DIR = CMakeFiles\solarism.dir
   OBJECT_FILE_DIR = CMakeFiles\solarism.dir\src
 
+build CMakeFiles/solarism.dir/src/planet.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/planet.cpp || cmake_object_order_depends_target_solarism
+  DEP_FILE = CMakeFiles\solarism.dir\src\planet.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/SDL/include -IC:/Users/remza/CLionProjects/solarsim/include
+  OBJECT_DIR = CMakeFiles\solarism.dir
+  OBJECT_FILE_DIR = CMakeFiles\solarism.dir\src
+
+build CMakeFiles/solarism.dir/src/renderer.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/renderer.cpp || cmake_object_order_depends_target_solarism
+  DEP_FILE = CMakeFiles\solarism.dir\src\renderer.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/SDL/include -IC:/Users/remza/CLionProjects/solarsim/include
+  OBJECT_DIR = CMakeFiles\solarism.dir
+  OBJECT_FILE_DIR = CMakeFiles\solarism.dir\src
+
 build CMakeFiles/solarism.dir/src/window.cpp.obj: CXX_COMPILER__solarism_unscanned_Debug C$:/Users/remza/CLionProjects/solarsim/src/window.cpp || cmake_object_order_depends_target_solarism
   DEP_FILE = CMakeFiles\solarism.dir\src\window.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -78,7 +92,7 @@ build CMakeFiles/solarism.dir/src/window.cpp.obj: CXX_COMPILER__solarism_unscann
 #############################################
 # Link the executable C:\Users\remza\CLionProjects\solarsim\bin\Debug\solarism.exe
 
-build C$:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe: CXX_EXECUTABLE_LINKER__solarism_Debug CMakeFiles/solarism.dir/src/game.cpp.obj CMakeFiles/solarism.dir/src/main.cpp.obj CMakeFiles/solarism.dir/src/window.cpp.obj
+build C$:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe: CXX_EXECUTABLE_LINKER__solarism_Debug CMakeFiles/solarism.dir/src/game.cpp.obj CMakeFiles/solarism.dir/src/main.cpp.obj CMakeFiles/solarism.dir/src/planet.cpp.obj CMakeFiles/solarism.dir/src/renderer.cpp.obj CMakeFiles/solarism.dir/src/window.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/SDL/lib

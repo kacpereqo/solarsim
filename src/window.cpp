@@ -4,6 +4,7 @@
 
 #include "window.hpp"
 #include "iostream"
+#include <cassert>
 
 namespace Window {
     void Window::init() {
@@ -23,20 +24,19 @@ namespace Window {
             std::cout << "Error creating window: " << SDL_GetError()  << std::endl;
             system("pause");
         }
+    }
 
-        this->winSurface = SDL_GetWindowSurface( this->window );
-
-        if ( !winSurface ) {
-            std::cout << "Error getting surface: " << SDL_GetError() << std::endl;
-            system("pause");
-        }
-
-        SDL_FillRect( winSurface, nullptr, SDL_MapRGB( winSurface->format, 255, 255, 255 ) );
-        SDL_UpdateWindowSurface( window );
+    SDL_Window *Window::get_window() const {
+        assert(window != nullptr);
+        return window;
     }
 
     Window::~Window() {
-        SDL_DestroyWindow(this->window);
+        SDL_DestroyWindow(window);
         SDL_Quit();
     }
+
+
+
+
 }

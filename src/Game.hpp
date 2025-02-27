@@ -7,6 +7,7 @@
 
 #include <SDL2/SDL.h>
 
+#include "renderer.hpp"
 #include "window.hpp"
 
 namespace Game {
@@ -16,8 +17,8 @@ public:
     void run();
 
 private:
-
     Window::Window window;
+    Renderer::Renderer renderer;
 };
 
 } // Game

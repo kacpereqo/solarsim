@@ -1,7 +1,10 @@
 "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\remza\CLionProjects\solarsim -B C:\Users\remza\CLionProjects\solarsim\cmake-build-debug
 -- Add source files:
+-- C:/Users/remza/CLionProjects/solarsim/src/entity.cpp
 -- C:/Users/remza/CLionProjects/solarsim/src/game.cpp
 -- C:/Users/remza/CLionProjects/solarsim/src/main.cpp
+-- C:/Users/remza/CLionProjects/solarsim/src/planet.cpp
+-- C:/Users/remza/CLionProjects/solarsim/src/renderer.cpp
 -- C:/Users/remza/CLionProjects/solarsim/src/window.cpp
 -- 
 -- Copying all assets to destination folder...
