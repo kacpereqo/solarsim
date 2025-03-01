@@ -8,6 +8,6 @@
 -- 
 -- Copying all assets to destination folder...
 -- Copying all dependencies to destination folder...
--- Configuring done (0.3s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/remza/CLionProjects/solarsim/cmake-build-debug

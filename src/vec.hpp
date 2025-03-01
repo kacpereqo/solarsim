@@ -8,6 +8,14 @@
 #include "units.hpp"
 #include <iostream>
 
+#include "renderer.hpp"
+
+;
+
+namespace Renderer {
+    class Renderer;
+}
+
 namespace Vec {
 
     template <typename T>
@@ -36,7 +44,7 @@ namespace Vec {
             return {x / scalar, y / scalar};
         }
 
-        float length() const {
+        double length() const {
             return std::sqrt(x * x + y * y);
         }
 
@@ -44,11 +52,12 @@ namespace Vec {
             os << "x: " << vec.x << ", y: " << vec.y;
             return os;
         }
+
     };
 
-    struct Point : Vec2<float> {
-        Point() : Vec2<float>{0, 0} {}
-        Point(const float x, const float y) : Vec2<float>{x, y} {}
+    struct Point : Vec2<double> {
+        Point() : Vec2<double>{0, 0} {}
+        Point(const double x, const double y) : Vec2<double>{x, y} {}
 
         explicit operator SDL_Point() const {
             return {static_cast<int>(x), static_cast<int>(y)};
@@ -58,8 +67,8 @@ namespace Vec {
             return std::atan2(other.y - y, other.x - x);
         }
 
-        float distance(const Vec2& other) const {
-            return std::sqrt(std::pow(x - other.x, 2) + std::pow(y - other.y, 2));
+        double distance(const Vec2& other) const {
+            return std::sqrt(std::pow(x - other.x, 2) + std::pow(y - other.y, 2)) * 1'000'000'000;
         }
     };
 }

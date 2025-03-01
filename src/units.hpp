@@ -10,12 +10,12 @@
 
 namespace Units {
 
-    using Newton = float;
-    using Meter = float;
-    using MeterPerSecond = float;
-    using MeterPerSecondSquared = float;
-    using Kilogram = float;
-    using Radian = float;
+    using Newton = double;
+    using Meter = double;
+    using MeterPerSecond = double;
+    using MeterPerSecondSquared = double;
+    using Kilogram = double;
+    using Radian = double;
 
 }
 

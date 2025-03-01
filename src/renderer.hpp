@@ -20,19 +20,19 @@ class Renderer {
 private:
     SDL_Renderer* renderer{};
     std::vector<Planet::Planet*> entities;
-    float dt{};
+    double dt{};
 
 public:
     void add_entity(Planet::Planet *entity);
 
     void init(SDL_Window* window);
 
-    SDL_Renderer* get_renderer();
-
     void fill_rect(const SDL_Rect &rect, SDL_Color color) const;
     void fill_circle(const Vec::Point &center, uint32_t diameter, SDL_Color color) const;
+    void draw_line(const Vec::Point start, const Vec::Point end, SDL_Color color) const;
+    void draw_vector(const Vec::Point start, Vec::Vec2<double> vector, SDL_Color color) const;
 
-    void set_dt(const float dt) {
+    void set_dt(const double dt) {
         this->dt = dt;
     }
     void update_entities();

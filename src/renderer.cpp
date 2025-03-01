@@ -28,18 +28,29 @@ namespace Renderer {
         SDL_SetRenderDrawColor(this->renderer, color.r, color.g, color.b, color.a);
         for (int x = 0; x < diameter; x++) {
             for (int y = 0; y < diameter; y++) {
-                const float dx = static_cast<float>(diameter) / 2.0f - x;
-                const float dy = static_cast<float>(diameter) / 2.0f - y;
-                if ((dx * dx + dy * dy) < (static_cast<float>(diameter) / 2) * (static_cast<float>(diameter) / 2)) {
+                const double dx = static_cast<double>(diameter) / 2.0f - x;
+                const double dy = static_cast<double>(diameter) / 2.0f - y;
+                if ((dx * dx + dy * dy) < (static_cast<double>(diameter) / 2) * (static_cast<double>(diameter) / 2)) {
                     (void)SDL_RenderDrawPointF(this->renderer, center.x + dx,center.y + dy);
                 }
             }
         }
     }
 
+    void Renderer::draw_line(const Vec::Point start, const Vec::Point end, const SDL_Color color) const {
+        SDL_SetRenderDrawColor(this->renderer, color.r, color.g, color.b, color.a);
+        SDL_RenderDrawLineF(this->renderer, start.x, start.y, end.x, end.y);
+    }
+
     void Renderer::add_entity(Planet::Planet *entity) {
         this->entities.push_back(entity);
         std::cout << "Entity added!" << std::endl;
+    }
+
+    void Renderer::draw_vector(const Vec::Point start,  Vec::Vec2<double> vector, const SDL_Color color) const {
+        vector = vector / 1000.0;
+        const Vec::Point end = {start.x + vector.x, start.y + vector.y};
+        this->draw_line(start, end, color);
     }
 
     void Renderer::update_entities() {

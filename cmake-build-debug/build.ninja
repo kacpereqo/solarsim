@@ -94,7 +94,7 @@ build CMakeFiles/solarism.dir/src/window.cpp.obj: CXX_COMPILER__solarism_unscann
 
 build C$:/Users/remza/CLionProjects/solarsim/bin/Debug/solarism.exe: CXX_EXECUTABLE_LINKER__solarism_Debug CMakeFiles/solarism.dir/src/game.cpp.obj CMakeFiles/solarism.dir/src/main.cpp.obj CMakeFiles/solarism.dir/src/planet.cpp.obj CMakeFiles/solarism.dir/src/renderer.cpp.obj CMakeFiles/solarism.dir/src/window.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lSDL2_ttf  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/SDL/lib
   OBJECT_DIR = CMakeFiles\solarism.dir
   POST_BUILD = cd .
