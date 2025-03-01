@@ -3,8 +3,9 @@
 //
 
 #include "renderer.hpp"
+// #include <SDL2/SDL_test_font.h>
+#include <SDL2/SDL_timer.h>
 #include <iostream>
-
 #include "planet.hpp"
 
 namespace Renderer {
@@ -23,14 +24,14 @@ namespace Renderer {
         SDL_RenderFillRect(this->renderer, &rect);
     }
 
-    void Renderer::fill_circle(const SDL_Point &center, const uint32_t diameter, const SDL_Color color) const {
+    void Renderer::fill_circle(const Vec::Point &center, uint32_t diameter, const SDL_Color color) const {
         SDL_SetRenderDrawColor(this->renderer, color.r, color.g, color.b, color.a);
         for (int x = 0; x < diameter; x++) {
             for (int y = 0; y < diameter; y++) {
-                const int dx = diameter / 2 - x;
-                const int dy = diameter / 2 - y;
-                if ((dx * dx + dy * dy) < (diameter / 2) * (diameter / 2)) {
-                    SDL_RenderDrawPoint(this->renderer, center.x + dx, center.y + dy);
+                const float dx = static_cast<float>(diameter) / 2.0f - x;
+                const float dy = static_cast<float>(diameter) / 2.0f - y;
+                if ((dx * dx + dy * dy) < (static_cast<float>(diameter) / 2) * (static_cast<float>(diameter) / 2)) {
+                    (void)SDL_RenderDrawPointF(this->renderer, center.x + dx,center.y + dy);
                 }
             }
         }
@@ -38,16 +39,34 @@ namespace Renderer {
 
     void Renderer::add_entity(Planet::Planet *entity) {
         this->entities.push_back(entity);
+        std::cout << "Entity added!" << std::endl;
+    }
+
+    void Renderer::update_entities() {
+
+        for (size_t idx = 0; idx < this->entities.size(); idx++) {
+            const auto entity = this->entities[idx];
+
+            for (size_t jdx = 0; jdx < this->entities.size(); jdx++) {
+                const auto inner_entity = this->entities[jdx];
+
+                if (entity == inner_entity) continue;
+
+                if (entity->is_colliding(inner_entity)) {
+                    entity->eat_planet(inner_entity);
+                    this->entities.erase(this->entities.begin() + jdx);
+
+                    std::cout << "Collision detected!" << std::endl;
+                    break;
+                }
+
+                entity->update_properties(inner_entity, this->dt);
+            }
+            entity->update_position(this->dt);
+        }
     }
 
     void Renderer::update() const {
-        for (const auto entity : this->entities) {
-
-            entity->update_properties();
-            entity->update_position();
-
-            entity->draw(this);
-        }
 
         SDL_RenderPresent(this->renderer);
 
@@ -61,5 +80,11 @@ namespace Renderer {
 
     [[nodiscard]] SDL_Renderer* Renderer::get_renderer() const {
         return this->renderer;
+    }
+
+    void Renderer::draw_entities() const {
+        for (const auto entity : this->entities) {
+            entity->draw(this);
+        }
     }
 } // Renderer

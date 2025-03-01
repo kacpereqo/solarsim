@@ -45,6 +45,7 @@ add_executable(${PROJECT_NAME} ${SRC}
         src/Renderer.cpp
         src/Renderer.hpp
         src/units.hpp
+        src/Vec.hpp
 )
 
 target_link_libraries(
