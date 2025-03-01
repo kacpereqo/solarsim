@@ -3,10 +3,16 @@
 //
 
 #include "renderer.hpp"
-// #include <SDL2/SDL_test_font.h>
 #include <SDL2/SDL_timer.h>
 #include <iostream>
 #include "planet.hpp"
+#include <SDL2/SDL_ttf.h>
+
+constexpr int FONT_HEIGHT = 24;
+
+double round_to_decimal(double value, int decimal_places) {
+    return std::round(value * std::pow(10, decimal_places)) / std::pow(10, decimal_places);
+}
 
 namespace Renderer {
 
@@ -16,6 +22,18 @@ namespace Renderer {
         if (!this->renderer) {
             std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
             system("pause");
+        }
+
+        if (TTF_Init() < 0) {
+            std::cout << "Error initializing TTF: " << TTF_GetError() << std::endl;
+            return;
+        }
+
+        this->font = TTF_OpenFont("C:/Users/remza/CLionProjects/solarsim/assets/font/lato.ttf", FONT_HEIGHT);
+
+        if (!this->font) {
+            std::cout << "Error loading font: " << TTF_GetError() << std::endl;
+            return;
         }
     }
 
@@ -53,6 +71,16 @@ namespace Renderer {
         this->draw_line(start, end, color);
     }
 
+    void Renderer::draw_text(const Vec::Point start, const std::string &text, const SDL_Color color) const {
+        SDL_Surface *text_surface = TTF_RenderText_Solid(this->font, text.c_str(), color);
+        SDL_Texture *texture = SDL_CreateTextureFromSurface(this->renderer, text_surface);
+
+        const SDL_Rect rect = {static_cast<int>(start.x), static_cast<int>(start.y), static_cast<int>(12 * text.size()), FONT_HEIGHT};
+        SDL_FreeSurface(text_surface);
+        SDL_RenderCopy(this->renderer, texture, nullptr, &rect);
+        SDL_DestroyTexture(texture);
+    }
+
     void Renderer::update_entities() {
 
         for (size_t idx = 0; idx < this->entities.size(); idx++) {
@@ -76,6 +104,11 @@ namespace Renderer {
             entity->update_position(this->dt);
         }
     }
+    void Renderer::draw_fps_counter() const {
+        std::string fps = "FPS: " + std::to_string(round_to_decimal(this->time_multiplier / dt , 2));
+        fps = fps.substr(0, fps.find('.') + 3);
+        this->draw_text({10,10}, fps, {255,255,255});
+    }
 
     void Renderer::update() const {
 
@@ -97,5 +130,7 @@ namespace Renderer {
         for (const auto entity : this->entities) {
             entity->draw(this);
         }
+
+        this->draw_fps_counter();
     }
 } // Renderer

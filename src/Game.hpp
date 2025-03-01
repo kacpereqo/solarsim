@@ -17,6 +17,11 @@ public:
     void run();
 
 private:
+    uint64_t last_time{};
+    uint64_t current_time{};
+
+    double dt{};
+
     Window::Window window;
     Renderer::Renderer renderer;
 };
